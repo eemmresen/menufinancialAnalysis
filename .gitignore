@@ -1,0 +1,17 @@
+node_modules/
+dist/
+dist-ssr/
+artifacts/
+*.local
+.DS_Store
+*.log
+.env
+.env.*
+.vscode/*
+!.vscode/extensions.json
+
+*.tsbuildinfo
+
+# Kisisel kaynak dosyalar
+WhatsApp Image*.jpeg
+problem.txt

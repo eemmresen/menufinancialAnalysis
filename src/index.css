@@ -1,0 +1,95 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Segoe UI', ui-sans-serif, system-ui, -apple-system, 'Helvetica Neue', Arial,
+    sans-serif;
+
+  --color-brand-50: #eef6f2;
+  --color-brand-100: #d6e9e0;
+  --color-brand-200: #aed3c2;
+  --color-brand-300: #7fb8a0;
+  --color-brand-400: #4f987c;
+  --color-brand-500: #2f7a60;
+  --color-brand-600: #1f624c;
+  --color-brand-700: #184e3d;
+  --color-brand-800: #123d30;
+  --color-brand-900: #0d2e24;
+
+  --color-sand-50: #fbf9f5;
+  --color-sand-100: #f5f1e9;
+  --color-sand-200: #e9e2d4;
+  --color-sand-300: #d8cdb8;
+  --color-sand-400: #bfae91;
+  --color-sand-500: #a08d6f;
+
+  --color-clay-500: #c0653a;
+  --color-clay-600: #a8532d;
+
+  --color-ink-500: #6b7280;
+  --color-ink-700: #3f4650;
+  --color-ink-900: #1c2226;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-sand-50 text-ink-900 font-sans antialiased;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-sand-300) transparent;
+  }
+
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-500);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-sand-200 bg-white shadow-[0_1px_2px_rgba(28,34,38,0.04)];
+  }
+
+  .label {
+    @apply mb-1.5 block text-[13px] font-medium text-ink-700;
+  }
+
+  .hint {
+    @apply mt-1 text-xs text-ink-500;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .print-area {
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  @page {
+    margin: 12mm;
+  }
+}
